@@ -84,3 +84,51 @@ void Tests::BuyNGetOnePromoTest_getDiscountB()
 	std::cout << "Discount: " << promotion.getDiscount(items) << std::endl;
 
 }
+
+void Tests::CMultiPricedPromoTest_getDiscountA()
+{
+	std::cout << "Testing CMultiPricedPromo discount" << std::endl << std::endl;
+
+	std::vector<CItem> items;
+	items.push_back(CItem('A', 0.5));
+	items.push_back(CItem('A', 0.5));
+	items.push_back(CItem('A', 0.5));
+
+	items.push_back(CItem('A', 0.5));
+	items.push_back(CItem('A', 0.5));
+	items.push_back(CItem('A', 0.5));
+
+	items.push_back(CItem('A', 0.5));
+	items.push_back(CItem('A', 0.5));
+	items.push_back(CItem('A', 0.5));
+
+
+	CMultiPricedPromo promotion('A', 3, 1.10);
+
+	std::cout << "Discount: " << promotion.getDiscount(items) << std::endl;
+
+}
+
+void Tests::CMultiPricedPromoTest_getDiscountB()
+{
+	std::cout << "Testing CMultiPricedPromo discount" << std::endl << std::endl;
+
+	std::vector<CItem> items;
+	items.push_back(CItem('A', 0.5));
+	items.push_back(CItem('A', 0.5));
+	items.push_back(CItem('A', 0.5));
+
+	items.push_back(CItem('A', 0.5));
+	items.push_back(CItem('A', 0.5));
+	items.push_back(CItem('A', 0.5));
+
+	items.push_back(CItem('A', 0.5));
+	items.push_back(CItem('A', 0.5));
+	items.push_back(CItem('A', 0.5));
+
+
+	CMultiPricedPromo promotion('A', 8, 1.10);
+
+	std::cout << "Discount: " << promotion.getDiscount(items) << std::endl;
+
+}
