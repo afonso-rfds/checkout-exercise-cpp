@@ -1,11 +1,11 @@
 #include "BuyNGetOnePromo.h"
 
-int CBuyNGetOnePromo::getDiscount(std::vector<CItem>& f_items)
+float CBuyNGetOnePromo::getDiscount(std::vector<CItem>& f_items)
 {
-	int numEligibleItems = 0;
-	int freeItems		 = 0;
-	int priceElibleItems = 0;
-	int discount;
+	int   numEligibleItems = 0;
+	int   freeItems		   = 0;
+	float priceElibleItems = 0;
+	float discount;
 
 	for (CItem item : f_items)
 	{
@@ -22,7 +22,7 @@ int CBuyNGetOnePromo::getDiscount(std::vector<CItem>& f_items)
 		freeItems++;
 	}
 
-	discount = freeItems * priceElibleItems;
+	discount = static_cast<float>(freeItems) * priceElibleItems;
 
 	return discount;
 }

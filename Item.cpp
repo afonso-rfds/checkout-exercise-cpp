@@ -7,7 +7,7 @@ char CItem::getSKU()
 
 
 
-int CItem::getPrice()
+float CItem::getPrice()
 {
 	return m_price;
 }

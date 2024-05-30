@@ -8,7 +8,7 @@ int main()
 {
 
     Tests tests;
-    tests.BuyNGetOnePromoTest_getDiscountB();
+    tests.CMultiPricedPromoTest_getDiscountA();
 }
 
 // Executar programa: Ctrl + F5 ou Menu Depurar > Iniciar Sem Depuração

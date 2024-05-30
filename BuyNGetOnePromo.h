@@ -11,7 +11,7 @@ public:
 
 	CBuyNGetOnePromo(char f_sku, int f_requiredAmountForReward) : CPromotion(), m_sku(f_sku), m_requiredAmountForReward(f_requiredAmountForReward) {}
 
-	int getDiscount(std::vector<CItem> &f_items) override;
+	float getDiscount(std::vector<CItem> &f_items) override;
 
 private:
 	const char m_sku;
