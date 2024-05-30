@@ -16,8 +16,8 @@ void Tests::CheckoutTest_scanItem_single()
 	CCheckout checkout;
 	checkout.scanItem(itemA);
 
-	std::cout << "SKU:   " << checkout.getItems()[0].getSKU() << std::endl;
-	std::cout << "Price: " << checkout.getItems()[0].getPrice() << std::endl;
+	//std::cout << "SKU:   " << checkout.getItems()[0].getSKU() << std::endl;
+	//std::cout << "Price: " << checkout.getItems()[0].getPrice() << std::endl;
 
 }
 
@@ -38,11 +38,11 @@ void Tests::CheckoutTest_scanItem_multiple()
 	checkout.scanItem(itemD);
 	checkout.scanItem(itemE);
 
-	for (auto item : checkout.getItems())
+	/*for (auto item : checkout.getItems())
 	{
 		std::cout << "SKU:   " << item.getSKU() << std::endl;
 		std::cout << "Price: " << item.getPrice() << std::endl << std::endl;
-	}
+	}*/
 
 }
 
