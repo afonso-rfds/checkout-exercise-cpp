@@ -1,4 +1,4 @@
-#include "CItem.h"
+#include "Item.h"
 
 char CItem::getSKU()
 {

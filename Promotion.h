@@ -1,7 +1,7 @@
 #pragma once
 
 #include <vector>
-#include "CItem.h"
+#include "Item.h"
 
 class CPromotion
 {
