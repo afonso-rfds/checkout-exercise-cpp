@@ -361,3 +361,6 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/Kata Exercise - C++.vcxproj
+/Kata Exercise - C++.vcxproj
+/Kata Exercise - C++.vcxproj.filters
