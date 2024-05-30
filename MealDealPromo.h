@@ -1,16 +1,16 @@
 #pragma once
 
-#include "Promotion.h"
+#include "Discount.h"
 
 
-class CMealDealPromo : public CPromotion
+class CMealDealPromo : public CDiscount
 {
 public:
 	CMealDealPromo() = delete;
 	~CMealDealPromo() = default;
 
 	CMealDealPromo(std::vector<char> f_skuCombination, float f_promoPrice) :
-		CPromotion(),
+		CDiscount(),
 		m_skuCombination(f_skuCombination),
 		m_promoPrice(f_promoPrice)
 	{}
