@@ -2,6 +2,7 @@
 
 #include "Item.h"
 #include "Checkout.h"
+#include "BuyNGetOnePromo.h"
 
 #include <iostream>
 
@@ -14,5 +15,8 @@ public:
 
 	void CheckoutTest_scanItem_single();
 	void CheckoutTest_scanItem_multiple();
+
+	void BuyNGetOnePromoTest_getDiscountA();
+	void BuyNGetOnePromoTest_getDiscountB();
 };
 

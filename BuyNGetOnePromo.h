@@ -9,11 +9,12 @@ public:
 	CBuyNGetOnePromo() = delete;
 	~CBuyNGetOnePromo() = default;
 
-	
+	CBuyNGetOnePromo(char f_sku, int f_requiredAmountReward) : CPromotion(), m_sku(f_sku), m_requiredAmountReward(f_requiredAmountReward) {}
 
-	int assignPromotion(std::vector<CItem> &f_items) override;
+	int getDiscount(std::vector<CItem> &f_items) override;
 
 private:
 	const char m_sku;
+	const int  m_requiredAmountReward;
 };
 

@@ -39,3 +39,48 @@ void Tests::CheckoutTest_scanItem_multiple()
 	}
 
 }
+
+void Tests::BuyNGetOnePromoTest_getDiscountA()
+{
+	std::cout << "Testing BuyNGetOnePromo discount" << std::endl << std::endl;
+
+	std::vector<CItem> items;
+	items.push_back(CItem('A', 5));
+	items.push_back(CItem('A', 5));
+	items.push_back(CItem('A', 5));
+	items.push_back(CItem('A', 5));
+	items.push_back(CItem('A', 5));
+	items.push_back(CItem('A', 5));
+	items.push_back(CItem('A', 5));
+	items.push_back(CItem('A', 5));
+
+	CBuyNGetOnePromo promotion('A', 3);
+
+	std::cout << "Discount: " << promotion.getDiscount(items) << std::endl;
+
+}
+
+void Tests::BuyNGetOnePromoTest_getDiscountB()
+{
+	std::cout << "Testing BuyNGetOnePromo discount" << std::endl << std::endl;
+
+	std::vector<CItem> items;
+	items.push_back(CItem('A', 5));
+	items.push_back(CItem('A', 5));
+	items.push_back(CItem('A', 5));
+	items.push_back(CItem('A', 5));
+	items.push_back(CItem('A', 5));
+	items.push_back(CItem('A', 5));
+	items.push_back(CItem('A', 5));
+	items.push_back(CItem('A', 5));
+	items.push_back(CItem('B', 5));
+	items.push_back(CItem('B', 5));
+	items.push_back(CItem('B', 5));
+	items.push_back(CItem('A', 5));
+
+
+	CBuyNGetOnePromo promotion('A', 2);
+
+	std::cout << "Discount: " << promotion.getDiscount(items) << std::endl;
+
+}

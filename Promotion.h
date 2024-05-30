@@ -6,6 +6,6 @@
 class CPromotion
 {
 public:
-	virtual int assignPromotion(std::vector<CItem> &f_items) = 0;
+	virtual int getDiscount(std::vector<CItem> &f_items) = 0;
 };
 
