@@ -2,10 +2,13 @@
 //
 
 #include <iostream>
+#include "Tests.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+
+    Tests tests;
+    tests.CheckoutTest_scanItem_multiple();
 }
 
 // Executar programa: Ctrl + F5 ou Menu Depurar > Iniciar Sem Depuração
