@@ -1,9 +1,5 @@
 #pragma once
 
-#include "Item.h"
-#include "Checkout.h"
-#include "BuyNGetOnePromo.h"
-#include "MultiPricedPromo.h"
 
 #include <iostream>
 
@@ -22,5 +18,8 @@ public:
 
 	void CMultiPricedPromoTest_getDiscountA();
 	void CMultiPricedPromoTest_getDiscountB();
+
+	void CMealDealPromoTest_getDiscountA();
+	void CMealDealPromoTest_getDiscountB();
 };
 

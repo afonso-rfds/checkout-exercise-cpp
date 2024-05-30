@@ -1,5 +1,11 @@
 #include "Tests.h"
 
+#include "Item.h"
+#include "Checkout.h"
+#include "BuyNGetOnePromo.h"
+#include "MultiPricedPromo.h"
+#include "MealDealPromo.h"
+
 
 void Tests::CheckoutTest_scanItem_single()
 {
@@ -103,7 +109,7 @@ void Tests::CMultiPricedPromoTest_getDiscountA()
 	items.push_back(CItem('A', 0.5));
 
 
-	CMultiPricedPromo promotion('A', 3, 1.10);
+	CMultiPricedPromo promotion('A', 3, 1.10f);
 
 	std::cout << "Discount: " << promotion.getDiscount(items) << std::endl;
 
@@ -127,7 +133,37 @@ void Tests::CMultiPricedPromoTest_getDiscountB()
 	items.push_back(CItem('A', 0.5));
 
 
-	CMultiPricedPromo promotion('A', 8, 1.10);
+	CMultiPricedPromo promotion('A', 8, 1.10f);
+
+	std::cout << "Discount: " << promotion.getDiscount(items) << std::endl;
+
+}
+
+void Tests::CMealDealPromoTest_getDiscountA()
+{
+	std::cout << "Testing CMultiPricedPromo discount" << std::endl << std::endl;
+
+	std::vector<CItem> items;
+	items.push_back(CItem('E', 200));
+	items.push_back(CItem('D', 150));
+
+	CMealDealPromo promotion({'D', 'E'}, 300);
+
+	std::cout << "Discount: " << promotion.getDiscount(items) << std::endl;
+
+}
+
+void Tests::CMealDealPromoTest_getDiscountB()
+{
+	std::cout << "Testing CMultiPricedPromo discount" << std::endl << std::endl;
+
+	std::vector<CItem> items;
+	items.push_back(CItem('E', 200));
+	items.push_back(CItem('D', 150));
+	items.push_back(CItem('D', 150));
+	items.push_back(CItem('E', 200));
+
+	CMealDealPromo promotion({ 'D', 'E' }, 300);
 
 	std::cout << "Discount: " << promotion.getDiscount(items) << std::endl;
 
