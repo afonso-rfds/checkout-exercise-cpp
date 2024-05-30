@@ -12,7 +12,7 @@ public:
 	int  getPrice();
 
 private:
-	char m_sku;
-	int  m_price;
+	const char m_sku;
+	const int  m_price;
 };
 
