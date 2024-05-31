@@ -1,23 +1,63 @@
-// Kata Exercise - C++.cpp : Este arquivo contém a função 'main'. A execução do programa começa e termina ali.
-//
-
 #include <iostream>
+#include <vector>
+
 #include "Tests.h"
+
+#include "Item.h"
+#include "Checkout.h"
+#include "Discount.h"
+#include "BuyNGetOnePromo.h"
+#include "MultiPricedPromo.h"
+#include "MealDealPromo.h"
 
 int main()
 {
+	std::vector<CDiscount*> promos;
+	CCheckout checkout(promos);
 
-    Tests tests;
-    tests.CMealDealPromoTest_getDiscountB();
+	std::cout << "------------------------------------------------------------" << std::endl;
+	std::cout << "------------------------------------------------------------" << std::endl;
+	std::cout << "Welcome to Checkout Kata" << std::endl << std::endl;
+	std::cout << "Prices are: " << std::endl;
+	std::cout << "Item        Unit Price (in pounds)         Special Price"          << std::endl;
+	std::cout << "A           0.5                            "                       << std::endl;
+	std::cout << "B           0.75                           2 for 1.25\x9C "        << std::endl;
+	std::cout << "C           0.25                           Buy 3, get one free "   << std::endl;
+	std::cout << "D           1.50                           Buy D and E for 3\x9C " << std::endl;
+	std::cout << "E           2                              Buy D and E for 3\x9C " << std::endl;
+	std::cout << "------------------------------------------------------------" << std::endl;
+	std::cout << "------------------------------------------------------------" << std::endl << std::endl << std::endl;
+
+
+	// ----- Change items properties here -----
+	CItem itemA('A', 0.5f);
+	CItem itemB('B', 0.75f);
+	CItem itemC('C', 0.25f);
+	CItem itemD('D', 1.5f);
+	CItem itemE('E', 2);
+
+
+	// ----- Change promotions here -----
+	promos.push_back(new CMultiPricedPromo('B', 2, 1.25f));
+	promos.push_back(new CBuyNGetOnePromo('C', 3));
+	promos.push_back(new CMealDealPromo({ 'D', 'E' }, 3));
+
+
+	// ----- Change scanned items here -----
+	checkout.scanItem(itemB);
+	checkout.scanItem(itemB);
+	checkout.scanItem(itemD);
+	checkout.scanItem(itemB);
+	checkout.scanItem(itemE);
+	checkout.scanItem(itemB);
+
+
+
+
+
+	std::cout << "------------- Bill -------------" << std::endl;
+	std::cout << "Price:     "   << checkout.calculatePriceWithoutDiscount()                                << "\x9C" << std::endl;
+	std::cout << "Discount:  "   << checkout.calculateDiscount()                                            << "\x9C" << std::endl;
+	std::cout << "To Pay:    "   << checkout.calculatePriceWithoutDiscount() - checkout.calculateDiscount() << "\x9C" << std::endl;
 }
 
-// Executar programa: Ctrl + F5 ou Menu Depurar > Iniciar Sem Depuração
-// Depurar programa: F5 ou menu Depurar > Iniciar Depuração
-
-// Dicas para Começar: 
-//   1. Use a janela do Gerenciador de Soluções para adicionar/gerenciar arquivos
-//   2. Use a janela do Team Explorer para conectar-se ao controle do código-fonte
-//   3. Use a janela de Saída para ver mensagens de saída do build e outras mensagens
-//   4. Use a janela Lista de Erros para exibir erros
-//   5. Ir Para o Projeto > Adicionar Novo Item para criar novos arquivos de código, ou Projeto > Adicionar Item Existente para adicionar arquivos de código existentes ao projeto
-//   6. No futuro, para abrir este projeto novamente, vá para Arquivo > Abrir > Projeto e selecione o arquivo. sln

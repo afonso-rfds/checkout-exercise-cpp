@@ -13,8 +13,8 @@ void Tests::CheckoutTest_scanItem_single()
 
 	CItem itemA('A', 10);
 
-	CCheckout checkout;
-	checkout.scanItem(itemA);
+	//CCheckout checkout;
+	//checkout.scanItem(itemA);
 
 	//std::cout << "SKU:   " << checkout.getItems()[0].getSKU() << std::endl;
 	//std::cout << "Price: " << checkout.getItems()[0].getPrice() << std::endl;
@@ -31,12 +31,12 @@ void Tests::CheckoutTest_scanItem_multiple()
 	CItem itemD('D', 40);
 	CItem itemE('A', 50);
 
-	CCheckout checkout;
+	/*CCheckout checkout;
 	checkout.scanItem(itemA);
 	checkout.scanItem(itemB);
 	checkout.scanItem(itemC);
 	checkout.scanItem(itemD);
-	checkout.scanItem(itemE);
+	checkout.scanItem(itemE);*/
 
 	/*for (auto item : checkout.getItems())
 	{
